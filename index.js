@@ -92,7 +92,7 @@ function scan (render) {
 
   function renderModule (module, treePath) {
     if (!scopes[treePath]) {
-      scopes[treePath] = module.controller()
+      scopes[treePath] = new module.controller()
       if (scopes[treePath]) {
         api.onunloaders.push(scopes[treePath].onunload)
       }
